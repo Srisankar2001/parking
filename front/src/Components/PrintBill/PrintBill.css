@@ -1,0 +1,50 @@
+.printBill{
+    width:400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+    margin: 30px;
+}
+.printBill-heading{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.printBill-heading hr{
+    height: 2px;
+    border: none;
+    margin: 20px 0;
+    background-color: black;
+    width: 300px;
+}
+.printBill-body{
+    margin: 20px 0;
+    font-size: 20px;
+}
+.printBill-body h4{
+    padding: 2px;
+}
+.printBill-body h5{
+    padding: 2px;
+    font-size: 15px;
+}
+.printBill-body h3{
+    font-size: 30px;
+    padding: 10px;
+}
+.printBill-footer{
+    padding: 5px 0;
+}
+.printBill-footer hr{
+    height: 2px;
+    border: none;
+    background-color: black;
+    width: 300px;
+}
+.printBill-footer h4{
+    padding: 8px 0;
+    font-size: 20px;
+}

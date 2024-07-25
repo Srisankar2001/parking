@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.usermode-leave{
+    background-color: #c1cbfd;
+    color:#1C1D22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.usermode-leave-container{
+    background-color: #F9FAFA;
+    padding: 30px 80px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+.usermode-leave h1{
+    margin: 0 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.usermode-leave-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.usermode-leave-form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.usermode-leave-form label{
+    padding: 4px 0px;
+    font-size: 18px;
+}
+.usermode-leave-form input{
+    width: 250px;
+    padding: 3px 6px 3px 6px;
+    font-size: 18px;
+}
+.usermode-leave-form h6{
+    color: #EA2831;
+    font-size: 14px;
+    padding-top: 3px;
+    font-weight: 200;
+}
+.usermode-leave-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.usermode-leave-button-submit{
+    background-color: #607AFB;
+    color:#F9FAFA;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.usermode-leave-button-cancel{
+    background-color: #EA2831;
+    color:#F9FAFA;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+}

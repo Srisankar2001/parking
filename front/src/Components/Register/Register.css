@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.register{
+    background-color: #c1cbfd;
+    color:#1C1D22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.register-container{
+    background-color: #F9FAFA;
+    padding: 30px 80px;
+    border-radius: 10px;
+}
+.register h1{
+    margin: 0 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.register form{
+    margin: 20px;
+}
+.register-input-divs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+.register-input-div{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 0 10px 2px 10px;
+}
+
+.register-input-error {
+    grid-column: span 2;
+}
+
+.register-input-div label{
+    font-weight: 400;
+    padding: 5px 0;
+}
+.register-input-div input{
+    font-weight: 400;
+    width: 250px;
+    height: 20px;
+    padding: 5px;
+}
+.register-input-div h6,
+.register-input-error h6{
+    text-align: center;
+    color: #EA2831;
+    font-size: 14px;
+    padding: 3px 10px 5px 0px;
+    font-weight: 200;
+}
+.register-button-div{
+    display: flex;
+}
+.register-button-submit{
+    background-color: #607AFB;
+    color:#F9FAFA;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.register-button-reset{
+    background-color: #EA2831;
+    color:#F9FAFA;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.register-container a{
+    text-align: center;
+    text-decoration: none;
+    color:#1C1D22;
+}
+.register-container a:hover{
+    text-decoration: underline;
+}
