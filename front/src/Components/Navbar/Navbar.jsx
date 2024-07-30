@@ -20,7 +20,7 @@ export const Navbar = () => {
        {!isUsermode &&  <li className={state === "home" ? 'selected' : null} onClick={() => {
           setState("home")
           setIsUsermode(false)
-        }}><Link to="/dashboard"><img src={home} alt='' /><span>Dashboard</span></Link></li>}
+        }}><Link to="/"><img src={home} alt='' /><span>Dashboard</span></Link></li>}
         {!isUsermode && <li className={state === "table" ? 'selected' : null} onClick={() => { 
           setState("table") 
           setIsUsermode(false)

@@ -21,6 +21,7 @@
     margin: 0 20px;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 .login form{
     margin: 20px;
@@ -54,6 +55,8 @@
 }
 .login-button-div{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .login-button-submit{
     background-color: #607AFB;

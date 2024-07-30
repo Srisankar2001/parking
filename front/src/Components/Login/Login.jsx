@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import "./Login.css"
 import  LoginValidation  from '../../Functions/LoginValidation'
 import axiosInstance from '../../Config/AxoisConfig'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Login = () => {
+    const navigate = useNavigate()
     const [input, setInput] = useState({
         email: "",
         password: ""
@@ -43,6 +44,7 @@ export const Login = () => {
                     const response = await axiosInstance.post("/auth",postData)
                     if(response.data.success){
                         alert(response.data.message)
+                        navigate("/")
                     }
                     else{
                         alert(response.data.message)

@@ -54,8 +54,10 @@ export const PieChart = () => {
     let chartData = [pie.twoWheeler, pie.threeWheeler, pie.fourWheeler];
 
     const allZero = chartData.every(value => value === 0);
-    if (allZero) {
-        chartData = [1, 1, 1];
+    const singleNonZero = chartData.filter(value => value !== 0).length === 1;
+
+    if (allZero || singleNonZero) {
+        chartData = chartData.map(value => value === 0 ? 0.01 : value);
     }
 
     const data = {
@@ -63,16 +65,6 @@ export const PieChart = () => {
         datasets: [
             {
                 data: chartData,
-                // backgroundColor: [
-                //     'rgba(255, 99, 132, 1.0)',
-                //     'rgba(54, 162, 235, 1.0)',
-                //     'rgba(75, 192, 192, 1.0)'
-                // ],
-                // borderColor: [
-                //     'rgba(255, 99, 132, 1)',
-                //     'rgba(54, 162, 235, 1)',
-                //     'rgba(75, 192, 192, 1)'
-                // ],
                 backgroundColor: [
                     '#ff6384',
                     '#6b5b95',
@@ -92,7 +84,7 @@ export const PieChart = () => {
         responsive: true,
         plugins: {
             legend: {
-                position: 'none'
+                display: false
             },
             datalabels: {
                 color: '#000',
@@ -101,11 +93,12 @@ export const PieChart = () => {
                 },
                 display: true,
                 formatter: (value, context) => {
-                    if (allZero) {
-                        return `${context.chart.data.labels[context.dataIndex]}: 0`;
-                    }
-                    return `${context.chart.data.labels[context.dataIndex]}: ${value}`;
-                }
+                    const displayValue = (allZero || singleNonZero) && context.dataset.data[context.dataIndex] === 0.01 ? 0 : value;
+                    return `${context.chart.data.labels[context.dataIndex]}: ${displayValue}`;
+                },
+                anchor: 'end',
+                align: 'start',
+                offset: 10
             }
         }
     };

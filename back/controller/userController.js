@@ -129,20 +129,20 @@ const update = async (req, res) => {
         existingUser.threeWheeler.fee !== threeWheelerFee ? existingUser.threeWheeler.fee = threeWheelerFee : null
         existingUser.fourWheeler.fee !== fourWheelerFee ? existingUser.fourWheeler.fee = fourWheelerFee : null
 
-        if (existingUser.twoWheeler.count !== twoWheelerCount) {
+        if (existingUser.twoWheeler.slots !== Number(twoWheelerCount)) {
             if (Number(twoWheelerCount) === 0) {
                 await Promise.all(existingUser.twoWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
                 existingUser.twoWheelerParkingSlots = []
-                existingUser.twoWheeler.count = 0
+                existingUser.twoWheeler.slots = 0
             } else {
                 await Promise.all(existingUser.twoWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
 
                 const twoWheelerSlots = []
-                for (let i = 1; i <= twoWheelerCount; i++) {
+                for (let i = 1; i <= Number(twoWheelerCount); i++) {
                     const slot = new ParkingSlot({
                         slotNumber: `B-${i}`
                     })
@@ -150,24 +150,24 @@ const update = async (req, res) => {
                     twoWheelerSlots.push(slot)
                 }
                 existingUser.twoWheelerParkingSlots = twoWheelerSlots.map(slot => slot._id)
-                existingUser.twoWheeler.count = twoWheelerCount
+                existingUser.twoWheeler.slots = Number(twoWheelerCount)
             }
         }
 
-        if (existingUser.threeWheeler.count !== threeWheelerCount) {
+        if (existingUser.threeWheeler.slots !== Number(threeWheelerCount)) {
             if (Number(threeWheelerCount) === 0) {
                 await Promise.all(existingUser.threeWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
                 existingUser.threeWheelerParkingSlots = []
-                existingUser.threeWheeler.count = 0
+                existingUser.threeWheeler.slots = 0
             } else {
                 await Promise.all(existingUser.threeWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
 
                 const threeWheelerSlots = []
-                for (let i = 1; i <= threeWheelerCount; i++) {
+                for (let i = 1; i <= Number(threeWheelerCount); i++) {
                     const slot = new ParkingSlot({
                         slotNumber: `A-${i}`
                     })
@@ -175,24 +175,24 @@ const update = async (req, res) => {
                     threeWheelerSlots.push(slot)
                 }
                 existingUser.threeWheelerParkingSlots = threeWheelerSlots.map(slot => slot._id)
-                existingUser.threeWheeler.count = threeWheelerCount
+                existingUser.threeWheeler.slots = Number(threeWheelerCount)
             }
         }
 
-        if (existingUser.fourWheeler.count !== fourWheelerCount) {
+        if (existingUser.fourWheeler.slots !== Number(fourWheelerCount)) {
             if (Number(fourWheelerCount) === 0) {
                 await Promise.all(existingUser.fourWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
                 existingUser.fourWheelerParkingSlots = []
-                existingUser.fourWheeler.count = 0
+                existingUser.fourWheeler.slots = 0
             } else {
                 await Promise.all(existingUser.fourWheelerParkingSlots.map(async (slotId) => {
                     await ParkingSlot.findByIdAndDelete(slotId)
                 }))
 
                 const fourWheelerSlots = []
-                for (let i = 1; i <= fourWheelerCount; i++) {
+                for (let i = 1; i <= Number(fourWheelerCount); i++) {
                     const slot = new ParkingSlot({
                         slotNumber: `C-${i}`
                     })
@@ -200,7 +200,7 @@ const update = async (req, res) => {
                     fourWheelerSlots.push(slot)
                 }
                 existingUser.fourWheelerParkingSlots = fourWheelerSlots.map(slot => slot._id)
-                existingUser.fourWheeler.count = fourWheelerCount
+                existingUser.fourWheeler.slots = Number(fourWheelerCount)
             }
         }
 

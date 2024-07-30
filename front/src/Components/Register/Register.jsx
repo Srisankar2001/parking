@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import "./Register.css"
 import axiosInstance from '../../Config/AxoisConfig'
 import RegisterValidation from '../../Functions/RegistrationValidation'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Register = () => {
+    const navigate = useNavigate()
     const [input, setInput] = useState({
         name: "",
         email: "",
@@ -72,10 +73,10 @@ export const Register = () => {
                         fourWheelerCount : input.fourWheelerCount !== "" ? input.fourWheelerCount : 0,
                         fourWheelerFee : input.fourWheelerCount !== "" ? input.fourWheelerFee : 0,
                     }
-                    console.log(postData)
                     const response = await axiosInstance.post("/user/register", postData)
                     if (response.data.success) {
                         alert(response.data.message)
+                        navigate("/")
                     }
                     else {
                         alert(response.data.message)
